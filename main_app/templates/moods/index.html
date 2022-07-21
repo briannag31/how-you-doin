@@ -6,26 +6,33 @@
 {% for mood in moods %}
 {% if mood.designation == "G" %}
 <div class="card border-success mb-3">
+    <a href="{% url 'detail' mood.id %}">
     <div class="card-header">{{mood.date}}</div>
     <div class="card-body">
       <h4 class="card-title">{{mood.headline}}</h4>
       <p class="card-text">{{mood.description}}.</p>
     </div>
+</a>
 </div>
     {% elif mood.designation == "B"%}
     <div class="card border-dark mb-3">
+        <a href="{% url 'detail' mood.id %}">
         <div class="card-header">{{mood.date}}</div>
         <div class="card-body">
           <h4 class="card-title">{{mood.headline}}</h4>
           <p class="card-text">{{mood.description}}</p>
         </div>
+    </a>
       </div>
       {% else%} 
       <div class="card border-warning mb-3">
+        <a href="{% url 'detail' mood.id %}">
         <div class="card-header">{{mood.date}}</div>
         <div class="card-body">
           <h4 class="card-title">{{mood.headline}}</h4>
           <p class="card-text">{{mood.description}}</p>
+        </div>
+        </a>
         </div>
     {% endif %}
 {% endfor %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>About My Mood</h1>
+
+<div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Date: {{mood.date}}</div>
+    <div class="card-body">
+      <h4 class="card-title">Headline: {{mood.headline}}</h4>
+      <p class="card-text">Description: {{mood.description}}</p>
+    </div>
+  </div>
+
+{% endblock %}
+
