@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Sign Up</h1>
+
+{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
+
+<form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary"> Sign Up! </button>
+</form>
+<br>
+
+<script>
+    let elementInput = document.getElementsByTagName("input");
+    for (let i=0; i<elementInput.length; i++)
+    {
+      let elIn = elementInput[i];      
+      elIn.setAttribute( "class", elIn.getAttribute("class") + " form-control" );
+    }
+</script>
+{% endblock %}

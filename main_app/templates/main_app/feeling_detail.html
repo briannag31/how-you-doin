@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Feeling Details</h1>
+
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">{{ feeling.name }}</h4>
+      {% comment %} <p class="card-text">{{feeling.designation}}</p> {% endcomment %}
+      <a href="{% url 'feelings_update' feeling.id %}" class="card-link">Edit</a>
+      <a href="{% url 'feelings_delete' feeling.id %}" class="card-link">Delete</a>
+    </div>
+  </div>
+{% endblock %}

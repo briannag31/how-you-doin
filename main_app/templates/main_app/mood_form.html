@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if object %}
+    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+  {% else %}
+    <h1>Add A New Mood</h1>
+  {% endif %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <br>
+    <button type="submit" class="btn btn-primary"> Submit!</button>
+  </form>
+  <br>
+  <script>
+    let elementSelect = document.getElementsByTagName("select");
+    for (let i=0; i<elementSelect.length; i++)
+    {
+      let el = elementSelect[i];      
+      el.setAttribute( "class", el.getAttribute("class") + " form-select" );
+    }
+    let elementInput = document.getElementsByTagName("input");
+    for (let i=0; i<elementInput.length; i++)
+    {
+      let elIn = elementInput[i];      
+      elIn.setAttribute( "class", elIn.getAttribute("class") + " form-control" );
+    }
+    let elementText = document.getElementsByTagName("textarea");
+    for (let i=0; i<elementText.length; i++)
+    {
+      let elTxt = elementText[i];      
+      elTxt.setAttribute( "class", elTxt.getAttribute("class") + " form-control" );
+    }
+    var dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+  </script>
+  {% endblock %}
+
+  
