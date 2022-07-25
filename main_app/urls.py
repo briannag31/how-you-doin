@@ -16,4 +16,6 @@ urlpatterns = [
   path('feelings/<int:pk>/delete/', views.FeelingDelete.as_view(), name='feelings_delete'),
   path('accounts/signup/', views.signup, name='signup'),
   path('moods/<int:mood_id>/assoc_feeling/<int:feeling_id>/', views.assoc_feeling, name='assoc_feeling'),
+  path('news/', views.articles, name='articles'),
+
 ]

@@ -11,6 +11,8 @@
   <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
 
  
  
@@ -19,12 +21,8 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a  class="navbar-brand" href="{% url 'home' %}" ></a>
-    <a><img src="https://i.imgur.com/RRHM1Wo.png?1" style="height: 50px"/></a>
-    {% comment %} <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> {% endcomment %}
 
+    <a  class="navbar-brand" href="{% url 'home' %}" ><img src="https://i.imgur.com/RRHM1Wo.png?1" style="height: 50px"/></a>
     <div id="navbarColor03">
       <ul class="navbar-nav me-auto">
           <li class="nav-item">
@@ -48,20 +46,12 @@
           {% else %}
           <li class="nav-item"><a  class="nav-link"href="{% url 'signup' %}">Sign Up</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log In</a></li>
-        {% endif %}
-           {% comment %} <li class="nav-item dropdown">
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url "about" %}">About</a>
-              <a class="dropdown-item" href="{% url 'moods_create' %}">Add Mood</a>
-              <a class="dropdown-item" href="{% url "index" %}">My Moods</a>
-              <a class="dropdown-item" href="{% url 'feelings_create' %}">Add Feelings</a>
-              <a class="dropdown-item" href="{% url 'feelings_index' %}">My Feelings</a>
-          </li>  {% endcomment %}
         </ul>
       </div>
     </nav>
   </header>
   <main class="container">
+    <div id="calendar"></div>
     {% block content %}
     {% endblock %}
   </main>

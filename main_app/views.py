@@ -7,6 +7,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from newsapi import NewsApiClient
 
 def home(request):
   return render(request, 'home.html')
@@ -22,12 +23,29 @@ def moods_index(request):
 @login_required
 def moods_detail(request, mood_id):
   mood = Mood.objects.get(id=mood_id)
-  return render(request, 'moods/detail.html', { 'mood': mood })
+  missing_feelings = Feeling.objects.exclude(id__in = mood.feelings.all().values_list('id'))
+  return render(request, 'moods/detail.html', { 'mood': mood, "feelings": missing_feelings })
 
 @login_required
 def assoc_feeling(request, mood_id, feeling_id):
   Mood.objects.get(id=mood_id).feelings.add(feeling_id)
   return redirect('detail', mood_id=mood_id)
+
+API_KEY = '34dee51c45e74c80811b7c90ac26b147'
+def articles(request):
+    url = f'https://newsapi.org/v2/top-headlines?language=en&q=mental-health&apiKey={API_KEY}'
+    # url2 = f'https://newsapi.org/v2/top-headlines?language=en&apiKey={API_KEY}'
+    response = request.get(url)
+    # response2 = requests.get(url2)
+    data = response.json()
+    # data2 = response2.json()
+    articles = data['articles']
+    # articles2 = data2['articles']
+    context = {
+        'articles' : articles,
+        # 'articles2' : articles2
+    }
+    return render(request, 'templates/news.html', context)
 
 def signup(request):
   error_message = ''
