@@ -1,11 +1,78 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Feeling Details</h1>
+<h1>News</h1>
 
-<div class="card">
-    {% comment %} <div class="card-body">
-      <h4 class="card-title">{{ feeling.name }}</h4>
-    </div> {% endcomment %}
+<div class="card text-white bg-secondary mb-3">
+  <div class="card-header">{{data.articles.0.title}}</div>
+  <div class="card-body">
+    <h4 class="card-title">Article written by: {{data.articles.0.author}}</h4>
+    <p class="card-text">{{data.articles.0.description}}</p>
   </div>
+  <br>
+    <div class="card-action">
+      <a href="{{data.articles.0.url}}">Visit Article</a>
+    </div>
+</div>
+
+<div class="card text-white bg-secondary mb-3">
+  <div class="card-header">{{data.articles.1.title}}</div>
+  <div class="card-body">
+    <h4 class="card-title">Article written by: {{data.articles.1.author}}</h4>
+    <p class="card-text">{{data.articles.1.description}}</p>
+  </div>
+  <br>
+    <div class="card-action">
+      <a href="{{data.articles.1.url}}">Visit Article</a>
+    </div>
+</div>
+
+<div class="card text-white bg-secondary mb-3">
+  <div class="card-header">{{data.articles.2.title}}</div>
+  <div class="card-body">
+    <h4 class="card-title">Article written by: {{data.articles.2.author}}</h4>
+    <p class="card-text">{{data.articles.2.description}}</p>
+  </div>
+  <br>
+    <div class="card-action">
+      <a href="{{data.articles.2.url}}">Visit Article</a>
+    </div>
+</div>
+
+<div class="card text-white bg-secondary mb-3">
+  <div class="card-header">{{data.articles.3.title}}</div>
+  <div class="card-body">
+    <h4 class="card-title">Article written by: {{data.articles.3.author}}</h4>
+    <p class="card-text">{{data.articles.3.description}}</p>
+  </div>
+  <br>
+    <div class="card-action">
+      <a href="{{data.articles.3.url}}">Visit Article</a>
+    </div>
+</div>
+
+<div class="card text-white bg-secondary mb-3">
+  <div class="card-header">{{data.articles.4.title}}</div>
+  <div class="card-body">
+    <h4 class="card-title">Article written by: {{data.articles.4.author}}</h4>
+    <p class="card-text">{{data.articles.4.description}}</p>
+  </div>
+  <br>
+    <div class="card-action">
+      <a href="{{data.articles.4.url}}">Visit Article</a>
+    </div>
+</div>
+
+<div class="card text-white bg-secondary mb-3">
+  <div class="card-header">{{data.articles.5.title}}</div>
+  <div class="card-body">
+    <h4 class="card-title">Article written by: {{data.articles.5.author}}</h4>
+    <p class="card-text">{{data.articles.5.description}}</p>
+  </div>
+  <br>
+    <div class="card-action">
+      <a href="{{data.articles.5.url}}">Visit Article</a>
+    </div>
+</div>
+
 {% endblock %}

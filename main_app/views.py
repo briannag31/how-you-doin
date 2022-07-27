@@ -8,6 +8,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from newsapi import NewsApiClient
+import requests
+api_key='34dee51c45e74c80811b7c90ac26b147'
 
 def home(request):
   return render(request, 'home.html')
@@ -31,21 +33,26 @@ def assoc_feeling(request, mood_id, feeling_id):
   Mood.objects.get(id=mood_id).feelings.add(feeling_id)
   return redirect('detail', mood_id=mood_id)
 
-API_KEY = '34dee51c45e74c80811b7c90ac26b147'
 def articles(request):
-    url = f'https://newsapi.org/v2/top-headlines?language=en&q=mental-health&apiKey={API_KEY}'
-    # url2 = f'https://newsapi.org/v2/top-headlines?language=en&apiKey={API_KEY}'
-    response = request.get(url)
-    # response2 = requests.get(url2)
-    data = response.json()
-    # data2 = response2.json()
-    articles = data['articles']
-    # articles2 = data2['articles']
-    context = {
-        'articles' : articles,
-        # 'articles2' : articles2
-    }
-    return render(request, 'templates/news.html', context)
+  url = "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=34dee51c45e74c80811b7c90ac26b147"
+  response = requests.get(url)
+  data = response.json()
+  context = {
+    "data": data
+  }
+  print(data)
+  return render(request, 'news.html', context)
+
+def giphy(request):
+  apikey = "DGCA1Z0itzKkJP03WMPS0lMbWB1xN0wn"
+  url = "api.giphy.com/v1/gifs/random/api_key={apikey}"
+  response = requests.get(url)
+  data = response.json()
+  context = {
+    "data": data
+  }
+  print(data)
+  return render(request, 'news.html', context)
 
 def signup(request):
   error_message = ''
