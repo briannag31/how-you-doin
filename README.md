@@ -7,8 +7,9 @@
 |-------|--------|
 | Project Name | How You Doin'?|
 | Created By| Brianna Gaines|
-| Description | This app will allow the user to track their daily moods|
+| Description | This app allows the user to track their daily moods, feelings throughout the day, and read up on the latest mental health news|
 | Trello Board | https://trello.com/b/xOKiLXTN/project4|
+|Live Link | https://how-you-doin2022.herokuapp.com/ |
 
 
 ## Technologies to be used:
@@ -20,6 +21,9 @@
 - Heroku
 - Django
 - Bootstrap
+- FontAwesome
+- Materialize
+- NewsAPI
 
 ## ERD
 ![ERD](https://i.imgur.com/ByAMWyQ.png)
@@ -30,8 +34,18 @@
 ![Index Page](https://i.imgur.com/dbfYGpx.png)
 ![Add Page](https://i.imgur.com/uLJQ1xr.png)
 
-## Bonus Features (if time)
+## Screenshots
+![Home Page](https://i.imgur.com/VwjzrvI.png)
+![Show Page](https://i.imgur.com/XCAbKdG.png)
+![Index Page](https://i.imgur.com/dbfYGpx.png)
+![Add Page](https://i.imgur.com/uLJQ1xr.png)
+![News Page](https://i.imgur.com/uLJQ1xr.png)
+
+## Future Updates
 
 - add a weather API
-- add a news API focused on mental health
+- fix the news API to be dynamically programmed rather than hard coded
+- add a calendar feature
+- add more fields to track moods
+- change the styling to look less Bootstrap-y
 
