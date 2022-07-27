@@ -2,14 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Mood, Feeling
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .forms import NewEntryForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from newsapi import NewsApiClient
 import requests
-api_key='34dee51c45e74c80811b7c90ac26b147'
 
 def home(request):
   return render(request, 'home.html')
@@ -35,17 +32,6 @@ def assoc_feeling(request, mood_id, feeling_id):
 
 def articles(request):
   url = "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=34dee51c45e74c80811b7c90ac26b147"
-  response = requests.get(url)
-  data = response.json()
-  context = {
-    "data": data
-  }
-  print(data)
-  return render(request, 'news.html', context)
-
-def giphy(request):
-  apikey = "DGCA1Z0itzKkJP03WMPS0lMbWB1xN0wn"
-  url = "api.giphy.com/v1/gifs/random/api_key={apikey}"
   response = requests.get(url)
   data = response.json()
   context = {

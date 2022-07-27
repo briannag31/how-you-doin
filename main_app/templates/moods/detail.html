@@ -19,7 +19,6 @@
       <hr>
       <div class="row">
         <div class="col-6">
-        {% comment %} <div class="col s6"> {% endcomment %}
       <h3>What I felt today</h3>
       {% if mood.feelings.count %}
         {% for feeling in mood.feelings.all %}
@@ -35,7 +34,6 @@
       {% endif %}
     </div>
  
-    {% comment %} <div class="col s6"> {% endcomment %}
     <div class="col-6">
       <h3>Available feelings</h3>
       {% if feelings.count %}
@@ -60,13 +58,6 @@
           {% endif %}
         </div>
     </div>
-           
-            {% comment %} <div class="card-action">
-              <form action="{% url 'assoc_feeling' mood.id feeling.id %}" method="post">
-                  {% csrf_token %}
-                <button type="submit" class="btn btn-primary">Add</button>
-              </form>
-            </div> {% endcomment %}
 
 {% endblock %}
 
