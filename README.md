@@ -1,5 +1,10 @@
 # How You Doin'?
 
+<div align="center">
+  <a href="https://github.com/briannag31/how-you-doin">
+    <img src="https://i.imgur.com/k10JHLY.png" alt="Logo" width="250" height="250">
+  </a>
+ </div>
 
 **Summary**
 
@@ -35,14 +40,12 @@
 ![Add Page](https://i.imgur.com/uLJQ1xr.png)
 
 ## Screenshots
-![Home Page](https://i.imgur.com/VwjzrvI.png)
-![Show Page](https://i.imgur.com/XCAbKdG.png)
-![Index Page](https://i.imgur.com/dbfYGpx.png)
-![Add Page](https://i.imgur.com/uLJQ1xr.png)
-![News Page](https://i.imgur.com/uLJQ1xr.png)
+![Home Page](https://i.imgur.com/jEPFcDl.png)
+![Index Page](https://i.imgur.com/xbYP8q0.png)
+![News Page](https://i.imgur.com/AmHppEy.png)
+![signup Page](https://i.imgur.com/WBvO1h4.png)
 
 ## Future Updates
-
 - add a weather API
 - fix the news API to be dynamically programmed rather than hard coded
 - add a calendar feature
