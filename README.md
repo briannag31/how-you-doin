@@ -49,6 +49,6 @@
 - add a weather API
 - fix the news API to be dynamically programmed rather than hard coded
 - add a calendar feature
-- add more fields to track moods
+- add more fields to track moods (make the app more complex)
 - change the styling to look less Bootstrap-y
 
